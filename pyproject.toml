@@ -1,0 +1,22 @@
+[project]
+name = "gcn-core"
+version = "0.1.0"
+description = "Graph convolutional networks for node classification"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch",
+    "torch-geometric",
+    "numpy",
+    "matplotlib",
+    "ipykernel",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
